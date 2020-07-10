@@ -8,23 +8,35 @@ import {RegisterComponent} from './login/register.component';
 import {PagesModule} from './pages/pages.module';
 import {SharedModule} from './shared/shared.module';
 
+import {FormsModule} from '@angular/forms';
+import { ChartDonnaComponent } from './components/chart-donna/chart-donna.component';
+import {ChartsModule} from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
 
     AppComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
+
+
 
 
   ],
   imports: [
     BrowserModule,
-
+    SharedModule,
     PagesModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+
   ],
   providers: [],
+  exports: [
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,6 +7,12 @@ import {PagesComponent} from './pages.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {PagesRoutesModule} from './pagesRoutesModule';
+import {FormsModule} from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+
+import {IncrementadorComponent} from '../components/incrementador/incrementador.component';
+import {ChartDonnaComponent} from '../components/chart-donna/chart-donna.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -14,14 +20,18 @@ import {PagesRoutesModule} from './pagesRoutesModule';
 
 
     PagesComponent,
+    IncrementadorComponent,
     DashboardComponent,
     Graficas1Component,
+    ChartDonnaComponent,
     ProgressComponent,
+    AccountSettingsComponent,
 
   ],
   exports: [
     PagesComponent,
     DashboardComponent,
+    IncrementadorComponent,
     Graficas1Component,
     ProgressComponent,
   ],
@@ -29,7 +39,10 @@ import {PagesRoutesModule} from './pagesRoutesModule';
     PagesRoutesModule,
     CommonModule,
     SharedModule,
+    FormsModule,
+    ChartsModule,
     RouterModule,
+
   ]
 })
 export class PagesModule {
