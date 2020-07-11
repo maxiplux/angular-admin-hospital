@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IncrementadorComponent } from './incrementador.component';
+import {IncrementadorComponent} from './incrementador.component';
 
 describe('IncrementadorComponent', () => {
   let component: IncrementadorComponent;
@@ -8,9 +8,9 @@ describe('IncrementadorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IncrementadorComponent ]
+      declarations: [IncrementadorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

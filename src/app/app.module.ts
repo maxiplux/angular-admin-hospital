@@ -9,8 +9,6 @@ import {PagesModule} from './pages/pages.module';
 import {SharedModule} from './shared/shared.module';
 
 import {FormsModule} from '@angular/forms';
-import { ChartDonnaComponent } from './components/chart-donna/chart-donna.component';
-import {ChartsModule} from 'ng2-charts';
 
 
 @NgModule({
@@ -19,8 +17,6 @@ import {ChartsModule} from 'ng2-charts';
     AppComponent,
     LoginComponent,
     RegisterComponent
-
-
 
 
   ],
@@ -33,10 +29,8 @@ import {ChartsModule} from 'ng2-charts';
 
   ],
   providers: [],
-  exports: [
-
-
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

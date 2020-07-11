@@ -4,15 +4,16 @@
 
 <div class="input-group">
     <span class="input-group-btn">
-    <button class="btn btn-primary" type="button" (click)="cambiarValor(-5)">
+    <button (click)="cambiarValor(-5)" class="btn btn-primary" type="button">
         <i class="mdi mdi-minus"></i>
     </button>
   </span>
 
-  <input #txtProgress type="number" class="form-control" name="progreso" [(ngModel)]="progreso" (ngModelChange)="onChanges($event)" min="1" max="100">
+  <input #txtProgress (ngModelChange)="onChanges($event)" [(ngModel)]="progreso" class="form-control" max="100"
+         min="1" name="progreso" type="number">
 
   <span class="input-group-btn">
-      <button class="btn btn-primary" type="button" (click)="cambiarValor(+5)">
+      <button (click)="cambiarValor(+5)" class="btn btn-primary" type="button">
           <i class="mdi mdi-plus"></i>
       </button>
     </span>

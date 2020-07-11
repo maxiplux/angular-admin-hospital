@@ -6,12 +6,13 @@ import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {SidebarRightComponent} from './sidebar-right/sidebar-right.component';
 import {FooterComponent} from './footer/footer.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   declarations: [
 
-  NopagefoundComponent,
+    NopagefoundComponent,
     HeaderComponent,
     BreadcrumbsComponent,
     SidebarComponent,
@@ -27,7 +28,7 @@ import {FooterComponent} from './footer/footer.component';
     FooterComponent,
   ],
   imports: [
-
+    RouterModule,
     CommonModule
   ]
 })

@@ -1,18 +1,20 @@
 /*******************
 Preloader
 ********************/
-.preloader{
-    width: 100%;
-    height: 100%;
-    top:0px;
-    position: fixed;
-    z-index: 99999;
-    background: #fff;
-    .cssload-speeding-wheel{
-        position: absolute;
-        top: calc(50% - 3.5px);
-        left: calc(50% - 3.5px);
-    }
+.preloader {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+
+.cssload-speeding-wheel {
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: calc(50% - 3.5px);
+}
+
 }
 .loader,
 .loader__figure {
@@ -87,6 +89,7 @@ Preloader
     background-color: transparent;
   }
 }
+
 @-moz-keyframes loader-figure {
   0% {
     height: 0;
@@ -111,6 +114,7 @@ Preloader
     background-color: transparent;
   }
 }
+
 @keyframes loader-figure {
   0% {
     height: 0;
@@ -135,6 +139,7 @@ Preloader
     background-color: transparent;
   }
 }
+
 @-webkit-keyframes loader-label {
   0% {
     opacity: 0.25;
@@ -146,6 +151,7 @@ Preloader
     opacity: 0.25;
   }
 }
+
 @-moz-keyframes loader-label {
   0% {
     opacity: 0.25;
@@ -157,6 +163,7 @@ Preloader
     opacity: 0.25;
   }
 }
+
 @keyframes loader-label {
   0% {
     opacity: 0.25;

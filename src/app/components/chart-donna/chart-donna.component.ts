@@ -9,29 +9,27 @@ import {ChartType} from 'chart.js';
 })
 export class ChartDonnaComponent implements OnInit {
 
-  constructor() { }
+  @Input() chartLabels: Label[];
 
   // Doughnut
+  @Input() chartData: MultiDataSet;
+  @Input() chartType: ChartType;
 
-  @Input() chartLabels: Label[]  ;
-  @Input() chartData: MultiDataSet ;
-
-  @Input() chartType: ChartType ;
-
-
+  constructor() {
+  }
 
   // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  public chartHovered({event, active}: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
 
 
   ngOnInit(): void {
-    console.log(`${this.chartData} --- ${this.chartLabels} --------------------> ${this.chartType}`)
+    console.log(`${this.chartData} --- ${this.chartLabels} --------------------> ${this.chartType}`);
 
   }
 

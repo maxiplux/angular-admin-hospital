@@ -8,11 +8,13 @@ import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {PagesRoutesModule} from './pagesRoutesModule';
 import {FormsModule} from '@angular/forms';
-import { ChartsModule } from 'ng2-charts';
+import {ChartsModule} from 'ng2-charts';
 
 import {IncrementadorComponent} from '../components/incrementador/incrementador.component';
 import {ChartDonnaComponent} from '../components/chart-donna/chart-donna.component';
-import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import {AccountSettingsComponent} from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { MyrxComponent } from './myrx/myrx.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     ChartDonnaComponent,
     ProgressComponent,
     AccountSettingsComponent,
+    PromesasComponent,
+    MyrxComponent,
 
   ],
   exports: [

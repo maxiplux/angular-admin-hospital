@@ -34,7 +34,7 @@
 
   var Validator = function (element, options) {
     this.$element = $(element)
-    this.options  = options
+    this.options = options
 
     options.errors = $.extend({}, Validator.DEFAULTS.errors, options.errors)
 
@@ -51,7 +51,7 @@
     this.$element.on('submit.bs.validator', $.proxy(this.onSubmit, this))
 
     this.$element.find('[data-match]').each(function () {
-      var $this  = $(this)
+      var $this = $(this)
       var target = $this.data('match')
 
       $(target).on('input.bs.validator', function (e) {
@@ -93,7 +93,7 @@
   }
 
   Validator.prototype.validateInput = function (e) {
-    var $el        = $(e.target)
+    var $el = $(e.target)
     var prevErrors = $el.data('bs.validator.errors')
     var errors
 
@@ -126,9 +126,9 @@
 
 
   Validator.prototype.runValidators = function ($el) {
-    var errors   = []
+    var errors = []
     var deferred = $.Deferred()
-    var options  = this.options
+    var options = this.options
 
     $el.data('bs.validator.deferred') && $el.data('bs.validator.deferred').reject()
     $el.data('bs.validator.deferred', deferred)
@@ -152,8 +152,12 @@
         var data = {}
         data[$el.attr('name')] = $el.val()
         $.get($el.data('remote'), data)
-          .fail(function (jqXHR, textStatus, error) { errors.push(getErrorMessage('remote') || error) })
-          .always(function () { deferred.resolve(errors)})
+          .fail(function (jqXHR, textStatus, error) {
+            errors.push(getErrorMessage('remote') || error)
+          })
+          .always(function () {
+            deferred.resolve(errors)
+          })
       })
     } else deferred.resolve(errors)
 
@@ -183,16 +187,18 @@
 
       errors = $('<ul/>')
         .addClass('list-unstyled')
-        .append($.map(errors, function (error) { return $('<li/>')[method](error) }))
+        .append($.map(errors, function (error) {
+          return $('<li/>')[method](error)
+        }))
 
       $block.data('bs.validator.originalContent') === undefined && $block.data('bs.validator.originalContent', $block.html())
       $block.empty().append(errors)
       $group.addClass('error')
 
       $feedback.length
-        && $feedback.removeClass(this.options.feedback.success)
-        && $feedback.addClass(this.options.feedback.error)
-        && $group.removeClass('validate')
+      && $feedback.removeClass(this.options.feedback.success)
+      && $feedback.addClass(this.options.feedback.error)
+      && $group.removeClass('validate')
     })
   }
 
@@ -205,9 +211,9 @@
     $group.removeClass('has-error')
 
     $feedback.length
-      && $feedback.removeClass(this.options.feedback.error)
-      && $feedback.addClass(this.options.feedback.success)
-      && $group.addClass('has-success')
+    && $feedback.removeClass(this.options.feedback.error)
+    && $feedback.addClass(this.options.feedback.success)
+    && $group.addClass('has-success')
   }
 
   Validator.prototype.hasErrors = function () {
@@ -220,9 +226,9 @@
 
   Validator.prototype.isIncomplete = function () {
     function fieldIncomplete() {
-      return this.type === 'checkbox' ? !this.checked                                   :
-             this.type === 'radio'    ? !$('[name="' + this.name + '"]:checked').length :
-                                        $.trim(this.value) === ''
+      return this.type === 'checkbox' ? !this.checked :
+        this.type === 'radio' ? !$('[name="' + this.name + '"]:checked').length :
+          $.trim(this.value) === ''
     }
 
     return !!this.$element.find(Validator.INPUT_SELECTOR).filter('[required]').filter(fieldIncomplete).length
@@ -234,7 +240,7 @@
   }
 
   Validator.prototype.toggleSubmit = function () {
-    if(!this.options.disable) return
+    if (!this.options.disable) return
 
     var $btn = $('button[type="submit"], input[type="submit"]')
       .filter('[form="' + this.$element.attr('id') + '"]')
@@ -287,9 +293,9 @@
 
   function Plugin(option) {
     return this.each(function () {
-      var $this   = $(this)
+      var $this = $(this)
       var options = $.extend({}, Validator.DEFAULTS, $this.data(), typeof option == 'object' && option)
-      var data    = $this.data('bs.validator')
+      var data = $this.data('bs.validator')
 
       if (!data && option == 'destroy') return
       if (!data) $this.data('bs.validator', (data = new Validator(this, options)))
@@ -299,7 +305,7 @@
 
   var old = $.fn.validator
 
-  $.fn.validator             = Plugin
+  $.fn.validator = Plugin
   $.fn.validator.Constructor = Validator
 
 

@@ -1,5 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
 import {SettingsService} from '../../services/settings.service';
 
 @Component({
@@ -9,7 +8,8 @@ import {SettingsService} from '../../services/settings.service';
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor( public settings: SettingsService ) { }
+  constructor(public settings: SettingsService) {
+  }
 
   ngOnInit(): void {
     this.setDefaultFlagForColor();
@@ -20,7 +20,7 @@ export class AccountSettingsComponent implements OnInit {
     // @ts-ignore
     const tema = `${$event.target.attributes.xdatatheme.value}`;
 
-    this.settings.aplicarTema( tema );
+    this.settings.aplicarTema(tema);
 
   }
 
@@ -29,8 +29,7 @@ export class AccountSettingsComponent implements OnInit {
     const selectores: any = document.getElementsByClassName('selector');
 
 
-
-    selectores.filter( ref => ref.getAttribute('xdatatheme') === this.settings.ajustes.tema ).forEach( goal => {
+    selectores.filter(ref => ref.getAttribute('xdatatheme') === this.settings.ajustes.tema).forEach(goal => {
       goal.classList.add('working');
     });
 

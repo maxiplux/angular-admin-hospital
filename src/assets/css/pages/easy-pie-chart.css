@@ -15,8 +15,8 @@ File: scss
 /*Light colors*/
 /*Normal Color*/
 /*Extra Variable*/
-/*============================================================== 
-Easy pie chart 
+/*==============================================================
+Easy pie chart
  ============================================================== */
 .chart {
   position: relative;
@@ -25,15 +25,19 @@ Easy pie chart
   height: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: center; }
-  .chart canvas {
-    position: absolute;
-    top: 0;
-    left: 0; }
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .chart.chart-widget-pie {
   margin-top: 5px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .pie-chart > span {
   left: 0;
@@ -44,7 +48,8 @@ Easy pie chart
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+}
 
 .chart > span > img {
   left: 0;
@@ -58,7 +63,8 @@ Easy pie chart
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .percent {
   display: inline-block;
@@ -66,8 +72,11 @@ Easy pie chart
   z-index: 2;
   font-weight: 600;
   font-size: 18px;
-  color: #263238; }
-  .percent:after {
-    content: '%';
-    margin-left: 0.1em;
-    font-size: .8em; }
+  color: #263238;
+}
+
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
